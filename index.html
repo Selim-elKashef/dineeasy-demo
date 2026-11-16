@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eatery – Reservation Chatbot Demo</title>
+<style>
+  :root{
+    --ink:#1d1a17; --paper:#faf7f2; --accent:#b5472b; --accent-dark:#8f3520;
+    --muted:#6f675f; --card:#ffffff; --line:#e7e0d6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Georgia,"Times New Roman",serif;background:var(--paper);color:var(--ink);line-height:1.6}
+  .demo-bar{background:var(--ink);color:#f3ece2;font:13px/1.4 system-ui,sans-serif;text-align:center;padding:8px 12px}
+  header{display:flex;justify-content:space-between;align-items:center;padding:18px 6vw;border-bottom:1px solid var(--line);background:var(--paper)}
+  .logo{font-size:26px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+  nav{display:flex;gap:26px;font:14px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em}
+  nav a{color:var(--ink);text-decoration:none}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 26px;border-radius:999px;font:600 14px system-ui,sans-serif;text-decoration:none;border:0;cursor:pointer}
+  .btn:hover{background:var(--accent-dark)}
+  .hero{padding:110px 6vw 100px;background:linear-gradient(135deg,#2b211b,#5a3326 60%,#b5472b);color:#fff}
+  .hero h1{font-size:clamp(40px,7vw,86px);line-height:1.05;max-width:11ch;margin-bottom:22px}
+  .hero p{max-width:46ch;font-size:18px;opacity:.92;margin-bottom:30px}
+  section{padding:70px 6vw}
+  h2{font-size:34px;margin-bottom:10px}
+  .sub{color:var(--muted);max-width:60ch;margin-bottom:34px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card h3{font-size:19px;margin-bottom:4px}
+  .card p{font:14px system-ui,sans-serif;color:var(--muted)}
+  footer{padding:30px 6vw 120px;border-top:1px solid var(--line);font:13px system-ui,sans-serif;color:var(--muted)}
+
+  </style>
+</head>
+<body>
+
+<div class="demo-bar">Presentation mockup of a restaurant website with an embedded chatbot. This is a demo page, not the official Eatery website.</div>
+
+<header>
+  <div class="logo">Eatery</div>
+  <nav><a href="#about">About</a><a href="#menu">Menu</a><a href="#branches">Locations</a><a href="#contact">Contact</a></nav>
+  <a class="btn" href="#" onclick="var m=document.querySelector('df-messenger');if(m&&m.showMinChat)m.showMinChat();return false;">Book Now</a>
+</header>
+
+<div class="hero">
+  <h1>Real food. Real people.</h1>
+  <p>Global flavors, from Egyptian to Japanese, Italian to Indian, in one vibrant space. Ask our assistant to reserve your table in seconds.</p>
+  <a class="btn" href="#" onclick="var m=document.querySelector('df-messenger');if(m&&m.showMinChat)m.showMinChat();return false;">Reserve with our assistant</a>
+</div>
+
+<section id="menu">
+  <h2>Signatures</h2>
+  <p class="sub">A taste of what our guests love most.</p>
+  <div class="grid">
+    <div class="card"><h3>Chirashi Mixed</h3><p>Fresh sashimi over seasoned rice.</p></div>
+    <div class="card"><h3>NY Strip</h3><p>Grilled to your liking with house sides.</p></div>
+    <div class="card"><h3>Charcoal Grilled Octopus</h3><p>Smoky, tender, finished with citrus.</p></div>
+    <div class="card"><h3>Red Thai Shrimp</h3><p>Rich coconut curry with jasmine rice.</p></div>
+  </div>
+</section>
+
+<section id="branches">
+  <h2>Locations</h2>
+  <p class="sub">Six branches across Egypt.</p>
+  <div class="grid">
+    <div class="card"><h3>Cairo Festival City</h3></div>
+    <div class="card"><h3>Cairo Business Park</h3></div>
+    <div class="card"><h3>Diplo, North Coast</h3></div>
+    <div class="card"><h3>Seashell, North Coast</h3></div>
+    <div class="card"><h3>Marassi, North Coast</h3></div>
+    <div class="card"><h3>Solari, Ras El Hekma</h3></div>
+  </div>
+</section>
+
+<footer id="contact">Demo page created for a Dialogflow presentation. Branch names are used as example data.</footer>
+
+<!-- DineEasy chatbot (Dialogflow Messenger) -->
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="DineEasy"
+  agent-id="f2852cbe-2631-497e-8150-8851e7717a23"
+  language-code="en"
+></df-messenger>
+
+</body>
+</html>
